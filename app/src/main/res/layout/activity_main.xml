@@ -6,7 +6,7 @@
     android:id="@+id/activity_main_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
     tools:openDrawer="start"
     tools:context="com.example.android.go4lunch_oc_p7_0.MainActivity">
 
@@ -21,7 +21,7 @@
             android:id="@+id/activity_main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#142B98"
+            android:background="#E83902"
             app:theme="@style/ToolBarStyle"/>
 
         <!-- FrameLayout for our fragments -->
@@ -38,10 +38,21 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@color/Toolbar"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/activity_main_nav_header"
-        app:menu="@menu/activity_main_menu_drawer" />
+        app:menu="@menu/activity_main_menu_drawer">
 
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:contentDescription="logo_drawer"
+        android:src="@drawable/go4lunchdrawer"/>
+
+</com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

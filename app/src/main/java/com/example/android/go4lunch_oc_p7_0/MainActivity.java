@@ -3,13 +3,18 @@ package com.example.android.go4lunch_oc_p7_0;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,13 +28,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.orange));
+
         // 6 - Configure all views
         this.configureToolBar();
-
         this.configureDrawerLayout();
-
         this.configureNavigationView();
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -48,12 +55,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // 4 - Handle Navigation Item Click
         int id = item.getItemId();
 
-        switch (id){
-            case R.id.activity_main_drawer_news :
+        switch (id) {
+            case R.id.nav_lunch:
                 break;
-            case R.id.activity_main_drawer_profile:
+            case R.id.nav_settings:
                 break;
-            case R.id.activity_main_drawer_settings:
+            case R.id.nav_logout:
                 break;
             default:
                 break;
@@ -69,13 +76,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // ---------------------
 
     // 1 - Configure Toolbar
-    private void configureToolBar(){
+    private void configureToolBar() {
         this.toolbar = (Toolbar) findViewById(R.id.activity_main_toolbar);
         setSupportActionBar(toolbar);
     }
 
     // 2 - Configure Drawer Layout
-    private void configureDrawerLayout(){
+    private void configureDrawerLayout() {
         this.drawerLayout = (DrawerLayout) findViewById(R.id.activity_main_drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
@@ -83,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // 3 - Configure NavigationView
-    private void configureNavigationView(){
+    private void configureNavigationView() {
         this.navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
