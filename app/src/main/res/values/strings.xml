@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">I\'m hungry!</string>
+
+    <!-- Used in NavigationDrawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="go4lunch">Go4Lunch</string>
+
+</resources>
