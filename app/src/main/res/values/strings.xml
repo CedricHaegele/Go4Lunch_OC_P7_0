@@ -5,5 +5,15 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="go4lunch">Go4Lunch</string>
+    <string name="logo_drawer">logo_drawer</string>
+    <string name="nav_header">nav header</string>
+    <string name="john_smith">John SMITH</string>
+    <string name="jsmith_1337_gmail_com">jsmith.1337@gmail.com</string>
+    <string name="map_view">Map View</string>
+    <string name="list_view">List View</string>
+    <string name="workmates">Workmates</string>
+    <string name="your_lunch">YOUR LUNCH</string>
+    <string name="settings">SETTINGS</string>
+    <string name="logout">LOGOUT</string>
 
 </resources>
