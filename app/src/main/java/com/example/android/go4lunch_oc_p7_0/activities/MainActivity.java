@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
@@ -85,13 +86,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // Change the color of the toolbar text
         toolbar.setTitleTextColor(Color.WHITE);
-
     }
 
     private void configureDrawerLayout() {
-        // Get a reference to the drawer layout and set up the toggle for the action bar
         this.drawerLayout = findViewById(R.id.activity_main_drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle.setDrawerArrowDrawable(new DrawerArrowDrawable(this));
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
     }
