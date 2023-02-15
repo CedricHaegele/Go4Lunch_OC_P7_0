@@ -1,11 +1,8 @@
 package com.example.android.go4lunch_oc_p7_0.activities;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.text.Html;
 import android.view.MenuItem;
 
@@ -13,12 +10,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.android.go4lunch_oc_p7_0.R;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -51,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // Handle the selection of a navigation item
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         // Change the color of the toolbar title and menu icon to white
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>I'm Hungry</font>"));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(Html.fromHtml("<font color='#ffffff'>I'm Hungry</font>"));
 
         // Change the color of the toolbar text
         toolbar.setTitleTextColor(Color.WHITE);
